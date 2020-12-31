@@ -1,7 +1,7 @@
 const {Client, RichEmbed, MessageEmbed, MessageReaction} = require('discord.js');
 const bot = new Client ();
-const token = 'NzkzOTAxNDY4NTg2OTk5OTE4.X-zAXA.rF2SvsgbrQkOVJZLqQrIrJRl7_g';
-const prefix = '!';
+const token = 'ENTER YOUR DISCORD BOT TOKEN';
+const prefix = 'ENTER YOUR CUSTOM PREFIX HERE'; 
 
 bot.on('ready', ()  =>{
     console.log("The Bot Is Now Active");
@@ -10,17 +10,17 @@ bot.on('ready', ()  =>{
 bot.on('message', message =>{
     let args = message.content.substring(prefix.length).split(" ");
     switch(args[0]){
-        case "sora":
+        case "ENTER YOUR CUSTOM BOT COMMAND EXAMPLE !BOT (PREFIX+NAME)": 
             const Embed = new MessageEmbed()
             .setColor(0xffc300)
-            .setTitle("Raiding Times")
-            .setDescription("Use !sora + Message that you want to use for the poll")
+            .setTitle("ENTER YOUR TITLE")
+            .setDescription("ENTER YOUR DESCRIPTION")
             if(!args[1]){
                 message.channel.send(Embed);
                 break;
             }
             let msgArgs = args.slice(1).join(" ");
-            message.channel.send("‍⏲️ "  + "**" + msgArgs + "**" ).then(MessageReaction => {
+            message.channel.send("‍⏲️ "  + "**" + msgArgs + "**" ).then(MessageReaction => { // ABLE TO REPLACE OR ADD CUSTOM REPLY TEXT/ CHANGE VISUALS
                 MessageReaction.react("👍🏻");
                 MessageReaction.react("👎🏻");
                 message.delete().catch(console.error);
